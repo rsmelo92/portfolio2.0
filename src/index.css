@@ -1,0 +1,59 @@
+@import "reset.css";
+
+:root {
+  --black: #1d1d21;
+  --gray-10: #2e2e31;
+  --gray-6: #7b7a7d;
+  --gray-4: #a5a5a6;
+  --gray-3: #bbbbbc;
+  --gray-2: #d1d0d2;
+  --gray-1: #e8e7e8;
+  --white: rgba(255, 255, 255, 0.87);
+
+  /* main colors */
+  --color-primary: #05403A;
+  --color-accent: #F2490C;
+
+  /* feedback */
+  --color-success: #185922;
+  --color-error: #8C391B;
+  --color-warning: #D97925;
+
+  /* typography */
+  --color-text: var(--gray-10);
+  --color-text-heading: var(--black);
+  --color-text-subtle: var(--gray-6);
+  --color-link: var(--color-primary);
+  --color-link-visited: var(--color-primary-dark);
+  --color-mark: var(--color-accent-bg);
+  --color-blockquote-border: var(--gray-2);
+
+  /* others */
+  --background-dark: #1a241e;
+}
+
+:root {
+  font-family: 'Neue Haas Grotesk Display Pro', system-ui, sans-serif;
+
+  color-scheme: dark;
+  color: var(--white);
+  background-color: var(--background-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  scroll-behavior: smooth;
+  padding: 0 8.78rem;
+}
+
+body * {
+  border-radius: 4px;
+}
+
+a:hover {
+  color: var(--color-accent)
+}

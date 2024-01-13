@@ -1,0 +1,19 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 70vh;
+}
+
+.title {
+  position: absolute;
+  font-size: 5rem;
+  width: 50rem;
+  left: 0;
+}
+
+.title > span {
+  background-color: color-mix(in srgb, var(--color-accent) 80%, var(--white));
+  padding: 0 6px;
+}
