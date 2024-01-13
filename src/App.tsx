@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/Root";
 import { Main } from "./routes/Main";
 import { Projects } from "./routes/Projects";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+// ????
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
 }
