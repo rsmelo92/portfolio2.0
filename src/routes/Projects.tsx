@@ -1,9 +1,12 @@
-import { Works } from "../components/Works"
+import { Canvas } from "../components/Canvas"
+import { Suspense } from "react"
 
 export const Projects = () => {
   return (
     <>
-      <Works />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Canvas />
+      </Suspense>
     </>
   )
 }
