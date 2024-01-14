@@ -1,5 +1,5 @@
 import classes from './Hero.module.css'
-import profile from '../assets/profile.png'
+import profile from '@/assets/profile.png'
 
 export const Hero = () => {
   return (
