@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/solissolutions.png"
+import Logo from "@/assets/solissolutions.png"
 import classes from './Navbar.module.css'
 
 export const Navbar = () => {
