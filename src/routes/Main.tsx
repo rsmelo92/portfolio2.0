@@ -1,5 +1,5 @@
-import { Hero } from "../components/Hero"
-import { Works } from "../components/Works"
+import { Hero } from "../components/Main/Hero"
+import { Works } from "../components/Main/Works"
 
 export const Main = () => {
   return (
