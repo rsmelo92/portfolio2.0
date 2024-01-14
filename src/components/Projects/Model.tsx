@@ -5,12 +5,17 @@ import { useFrame } from '@react-three/fiber'
 import { useGLTF, Decal, useTexture } from "@react-three/drei";
 import type { Mesh } from "three";
 
-export function Model() {
+type Props = {
+  image: string
+}
+
+export function Model({ image }: Props) {
   const { nodes, materials } = useGLTF("/scene.glb");
   const sceneRef = useRef<Mesh>(null)
   const [isAnimating, setIsAnimating] = useState(true)
 
-  const texture = useTexture("works/solissolutions.png")
+  // const texture = useTexture("works/profile.png")
+  // const texture = useTexture(image)
 
   useFrame((_, delta) => {
     if(!sceneRef.current?.rotateY) return
@@ -26,13 +31,13 @@ export function Model() {
         geometry={nodes.Object_4.geometry} 
         material={materials["Material.001"]}
       >
-        <Decal scale={[4.05, 1, 1.91]}>
+        {/* <Decal scale={[4.05, 1, 1.91]} >
           <meshBasicMaterial
             map={texture} 
             polygonOffset
             polygonOffsetFactor={-1}
           />
-        </Decal>
+        </Decal> */}
       </mesh>
       <mesh
         receiveShadow
@@ -53,6 +58,7 @@ export function Model() {
       onPointerLeave={() => {
         setIsAnimating(true)
       }}
+      scale={1.5}
     >
     <group>
       <group position={[0.162, 0.17, -0.483]} scale={0.601}>

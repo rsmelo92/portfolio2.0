@@ -11,6 +11,8 @@
   font-size: 5rem;
   width: 50rem;
   left: 0;
+  cursor: default;
+  user-select: none;
 }
 
 .title > span {
