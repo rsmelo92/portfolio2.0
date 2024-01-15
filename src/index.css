@@ -30,6 +30,7 @@
 
   /* others */
   --background-dark: #1a241e;
+  --shadow-1: rgba(0, 0, 0, 0.3);
 }
 
 :root {
@@ -48,6 +49,7 @@
 body {
   scroll-behavior: smooth;
   padding: 0 8.78rem;
+  padding-bottom: 150px;
 }
 
 body * {
