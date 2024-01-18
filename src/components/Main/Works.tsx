@@ -1,15 +1,4 @@
-import { 
-  BigBlock,
-  SmallBlock,
-  SmallDoubleBlock
-} from "./Blocks"
-
 import classes from './Works.module.css'
-import react from "/react.svg"
-import tailwind from "/tailwind.png"
-import typescript from "/typescript.svg"
-import storybook from "/storybook.svg"
-import extension from "/works/main3.png"
 import clsx from "clsx"
 
 export const Works = () => {

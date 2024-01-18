@@ -34,7 +34,7 @@
 }
 
 :root {
-  font-family: 'Neue Haas Grotesk Display Pro', system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
 
   color-scheme: dark;
   color: var(--white);
@@ -56,12 +56,16 @@ body * {
   border-radius: 4px;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Neue Haas Grotesk Display Pro', system-ui, sans-serif;
+}
+
 a:hover {
   color: var(--color-accent)
 }
 
 @media (max-width: 650px) {
   body {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 }

@@ -17,3 +17,10 @@
 .list a {
   font-size: 1.4rem;
 }
+
+@media (max-width: 650px) {
+  .nav {
+    justify-content: start;
+    gap: 22px;
+  }
+}
