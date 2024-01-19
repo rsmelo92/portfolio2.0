@@ -1,10 +1,16 @@
 .section {
-  margin-top: 5rem;
-  height: 70vh;
   display: flex;
+  margin-top: 5rem;
+  margin-bottom: 15rem;
+  /* height: 70vh; */
   width: 100%;
+}
+
+.about {
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
+  width: 100%;
 }
 
 .title {
@@ -12,6 +18,12 @@
   font-size: 2.5rem;
   margin-bottom: 2rem;
   align-self: flex-end;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .article {
@@ -25,6 +37,10 @@
 @media (max-width: 650px) {
   .section {
     height: initial;
+  }
+
+  .content {
+    flex-direction: column;
   }
 
   .article {
