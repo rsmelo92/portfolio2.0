@@ -1,10 +1,10 @@
-import { Works } from "@/components/Main/Works"
+import { Works } from "@/components/Works"
 import { useEffect } from "react";
 
 export const Projects = () => {
   useEffect(() => {  
     const scrollToBottom = () => window.scrollTo({
-      top: document.body.scrollHeight,
+      top: 115,
       behavior: 'smooth',
     });
     const timeout = setTimeout(() => { scrollToBottom(); }, 300);
