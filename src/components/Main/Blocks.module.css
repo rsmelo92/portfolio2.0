@@ -2,9 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* background: var(--black); */
   background-color: #0f190f;
-  /* border-radius: 16px; */
 }
 
 .gridBoxSmall {

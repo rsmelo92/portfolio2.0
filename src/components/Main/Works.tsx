@@ -1,7 +1,7 @@
 import { useState } from "react"
 import clsx from "clsx"
 
-import { Modal } from "./Modal"
+// import { Modal } from "./Modal"
 
 import squares from "/works/squares.webp"
 import silhouette from "/works/silhouette.jpg"
