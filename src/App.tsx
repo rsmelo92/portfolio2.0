@@ -7,15 +7,15 @@ import { Projects } from "@/routes/Projects";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/portfolio2.0/",
     element: <Root />,
     children: [
       {
-        path: "/",
+        path: "/portfolio2.0/",
         element: <Main />,
       },
       {
-        path: "/projects",
+        path: "/portfolio2.0/projects",
         element: <Projects />,
       },
     ],
