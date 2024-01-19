@@ -1,6 +1,6 @@
-import { Hero } from "@/components/Main/Hero"
-import { About } from "@/components/Main/About"
-import { Works } from "@/components/Main/Works"
+import { Hero } from "@/components/Hero"
+import { About } from "@/components/About"
+import { Works } from "@/components/Works"
 
 export const Main = () => {
   return (
