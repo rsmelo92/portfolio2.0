@@ -5,15 +5,15 @@ import classes from './Navbar.module.css'
 export const Navbar = () => {
   return (
     <nav className={classes.nav}>
-      <Link to='/'>
+      <Link to='/portfolio2.0/'>
         <img src={Logo} width={45} height={45} />
       </Link>
       <ul className={classes.list}>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/portfolio2.0/'>Home</Link>
         </li>
         <li>
-          <Link to='/projects'>Projects</Link>
+          <Link to='/portfolio2.0/projects'>Projects</Link>
         </li>
       </ul>
     </nav>
