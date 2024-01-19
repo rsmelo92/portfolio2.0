@@ -29,16 +29,21 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
+      
       - name: Install dependencies
         run: yarn install
+
       - name: Build
         run: yarn build
+      
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: './dist'
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
