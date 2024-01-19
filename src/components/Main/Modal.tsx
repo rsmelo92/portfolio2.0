@@ -66,7 +66,7 @@ export const Modal = ({ data, onClose }: Props) => {
             </div>
           </>
         )}
-    </div>
+      </div>
     </div>
   )
 }

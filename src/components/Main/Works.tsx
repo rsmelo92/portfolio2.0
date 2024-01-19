@@ -181,7 +181,8 @@ export const Works = ({ title }: Props) => {
             }} 
           />
         </div>
-        <Modal data={currentData} onClose={() => setCurrentData("")} />
+        {/* TODO: Create pages for works */}
+        {/* <Modal data={currentData} onClose={() => setCurrentData("")} /> */}
       </div>
     </section>
   )
