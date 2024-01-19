@@ -21,6 +21,10 @@
 }
 
 @media (max-width: 650px) {
+  .section {
+    height: initial;
+  }
+
   .article {
     font-size: 24px;
     width: 100%;

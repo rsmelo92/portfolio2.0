@@ -7,7 +7,7 @@ export const Main = () => {
     <>
       <Hero />
       <About />
-      <Works />
+      <Works title="Works" />
     </>
   )
 }
