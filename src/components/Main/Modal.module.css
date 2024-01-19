@@ -1,0 +1,52 @@
+.modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -25px;
+  background: var(--background-dark);
+  transition: top .2s linear;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+  padding-top: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header span {
+  font-family: 'Neue Haas Grotesk Display Pro', system-ui, sans-serif;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.cover {
+  overflow: hidden;
+  max-height: 28vh;
+  width: 100%;
+}
+
+.cover img {
+  width: 100%;
+}
+
+.body {
+  padding: 28px 18px;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.content {
+  line-height: 1.5rem;
+}
