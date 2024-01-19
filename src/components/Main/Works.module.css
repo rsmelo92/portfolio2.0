@@ -1,9 +1,153 @@
 .section {
-  margin-top: 5rem;
   height: 70vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .title {
   text-transform: uppercase;
   font-size: 2.5rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  margin-left: 8.3rem;
 }
+
+.grid {
+  display: grid;
+  grid-template-areas: 
+    "a1 a1 a2 a3 a4 a5"
+    "b1 b2 b3 b3 a4 a5"
+    "b1 c2 b3 b3 c5 c5"
+    "d1 d2 d3 d4 d4 d5";
+  gap: .5rem;
+  border-radius: unset!important;
+}
+
+.forceDark > div {
+  filter: invert(100%) contrast(0.9) brightness(0.666);
+}
+
+.forceDark:hover > div {
+  filter: brightness(0.9)!important;
+}
+
+.box {
+  background-color: #0f190f;
+  min-height: 200px;
+  width: 100%;
+  filter: invert(38%) grayscale(100%) brightness(94%) contrast(96%);
+}
+
+.box:hover {
+  filter: none!important;
+  cursor: pointer;
+}
+
+.box:nth-child(1) {
+  grid-area: a1;
+}
+
+.box:nth-child(2) {
+  grid-area: a2;
+}
+
+.box:nth-child(3) {
+  filter: none;
+  cursor: default;
+  grid-area: a3;
+}
+
+.box:nth-child(4) {
+  grid-area: a4;
+}
+
+.box:nth-child(5) {
+  grid-area: a5;
+}
+
+.box:nth-child(6) {
+  grid-area: b1;
+}
+
+.box:nth-child(7) {
+  filter: none;
+  cursor: default;
+  grid-area: b2;
+}
+
+.box:nth-child(8) {
+  filter: none;
+  cursor: default;
+  grid-area: b3;
+}
+
+.box:nth-child(9) {
+  grid-area: c2;
+}
+
+.box:nth-child(10) {
+  grid-area: c5;
+}
+
+.box:nth-child(11) {
+  grid-area: d1;
+}
+
+.box:nth-child(12) {
+  grid-area: d2;
+}
+
+.box:nth-child(13) {
+  grid-area: d3;
+  filter: none;
+  cursor: default;
+}
+
+.box:nth-child(14) {
+  grid-area: d4;
+}
+
+.box:nth-child(15) {
+  grid-area: d5;
+  filter: none;
+  cursor: default;
+}
+
+.boxContent {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+}
+
+@media (max-width: 650px) {
+  .grid {
+    display: grid;
+    grid-template-areas: 
+      "a1 a2"
+      "a3 a4"
+      "a5 a4"
+      "a5 b1"
+      "b2 b1"
+      "b3 b3"
+      "b3 b3"
+      "c2 c5"
+      "d1 d2"
+      "d4 d4"
+      "d3 d5";
+  }
+}
+

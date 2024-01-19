@@ -1,0 +1,41 @@
+.section {
+  margin-top: 5rem;
+  height: 70vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  align-self: flex-end;
+}
+
+.article {
+  font-size: 24px;
+  width: 600px;
+  font-weight: 300;
+  line-height: 2rem;
+  text-align: right;
+}
+
+@media (max-width: 650px) {
+  .section {
+    height: initial;
+  }
+
+  .article {
+    font-size: 24px;
+    width: 100%;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+  }
+}

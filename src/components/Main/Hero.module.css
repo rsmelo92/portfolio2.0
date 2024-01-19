@@ -11,9 +11,24 @@
   font-size: 5rem;
   width: 50rem;
   left: 0;
+  cursor: default;
+  user-select: none;
 }
 
 .title > span {
   background-color: color-mix(in srgb, var(--color-accent) 80%, var(--white));
   padding: 0 6px;
+}
+
+@media (max-width: 650px) {
+  .image {
+    display: none;
+  }
+  .hero {
+    height: max-content;
+  }
+  .title {
+    position: static;
+    font-size: 3rem;
+  }
 }

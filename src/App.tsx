@@ -1,9 +1,9 @@
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Root from "./routes/Root";
-import { Main } from "./routes/Main";
-import { Projects } from "./routes/Projects";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "@/routes/Root";
+import { Main } from "@/routes/Main";
+import { Projects } from "@/routes/Projects";
 
 const router = createBrowserRouter([
   {

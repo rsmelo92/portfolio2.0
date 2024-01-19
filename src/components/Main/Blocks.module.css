@@ -1,0 +1,25 @@
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f190f;
+}
+
+.gridBoxSmall {
+  flex-direction: column;
+  width: 120px;
+  height: 100px;
+  font-size: 1.15rem;
+}
+
+.gridDoubleBoxSmall {
+  width: 240px;
+  /* width: 260px; */
+  height: 100px;
+  font-size: 2rem;
+  grid-column: span 2
+}
+
+.bigBlock {
+  position: relative;
+}
