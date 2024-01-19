@@ -28,7 +28,7 @@ type Props = {
 }
 
 export const Works = ({ title }: Props) => {
-  const [currentData, setCurrentData] = useState<Data>("")
+  const [_, setCurrentData] = useState<Data>("")
   const filter = "invert(100%) contrast(0.9) brightness(0.666)";
   return (
     <section className={classes.section}>
