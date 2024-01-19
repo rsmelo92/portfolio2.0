@@ -2,7 +2,6 @@
   display: flex;
   margin-top: 5rem;
   margin-bottom: 15rem;
-  /* height: 70vh; */
   width: 100%;
 }
 
@@ -37,6 +36,8 @@
 @media (max-width: 650px) {
   .section {
     height: initial;
+    flex-direction: column;
+    margin-bottom: 2rem;
   }
 
   .content {
