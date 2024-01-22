@@ -65,6 +65,10 @@ a:hover {
   color: var(--color-accent)
 }
 
+.body-freeze {
+  overflow: hidden;
+}
+
 @media (max-width: 650px) {
   body {
     padding: 0 1rem;
