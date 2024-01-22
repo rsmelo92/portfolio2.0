@@ -29,7 +29,8 @@
   --color-blockquote-border: var(--gray-2);
 
   /* others */
-  --background-dark: #1a241e;
+  --background-dark: #121217;
+  /* --background-dark: #1a241e; */
   --shadow-1: rgba(0, 0, 0, 0.3);
 }
 
@@ -62,6 +63,10 @@ h1,h2,h3,h4,h5,h6 {
 
 a:hover {
   color: var(--color-accent)
+}
+
+.body-freeze {
+  overflow: hidden;
 }
 
 @media (max-width: 650px) {

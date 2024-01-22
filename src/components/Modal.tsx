@@ -1,7 +1,16 @@
 import { useCallback, useEffect, useState } from 'react'
-import terminal from "/works/pages/terminal.gif"
+import { Student } from './Works/Student'
 
 import classes from './Modal.module.css'
+import { Architect } from './Works/Architect'
+import { Consulta } from './Works/Consulta'
+import { Lesgow } from './Works/Lesgow'
+import { OOApp } from './Works/OOApp'
+import { Surfe } from './Works/Surfe'
+import { DesignSystem } from './Works/DesignSystem'
+import { Lawsuit } from './Works/Lawsuit'
+import { Bilheteriapp } from './Works/Bilheteriapp'
+import { OnlineOffice } from './Works/OnlineOffice'
 
 type Props = {
   data: Data
@@ -22,6 +31,10 @@ export const Modal = ({ data, onClose }: Props) => {
   useEffect(() => {
     if(data === "") return
     setTopPosition("20px")
+    document.querySelector("body")?.classList.add("body-freeze");
+    return () => {
+      document.querySelector("body")?.classList.remove("body-freeze");
+    }
   }, [data])
 
   useEffect(() => {
@@ -35,7 +48,7 @@ export const Modal = ({ data, onClose }: Props) => {
     }
   }, [closeModal])
   
-  const work = data && WORKS[data]
+  const Component = data && WORKS[data]
 
   return (
     <div
@@ -53,73 +66,22 @@ export const Modal = ({ data, onClose }: Props) => {
         </button>
       </div>
       <div>
-        {work && (
-          <>
-            <div className={classes.cover}>
-              <img src={work.image} />
-            </div>
-            <div className={classes.body}>
-              <h3 className={classes.title}>
-                {work.title}
-              </h3>
-              <p className={classes.content}>{work.content}</p>
-            </div>
-          </>
-        )}
+      {Component && <Component />}
       </div>
     </div>
   )
 }
 
 const WORKS = {
-  "architect" : {
-    title: "Senior Software Architect at Dev Experience Team (DevX)",
-    image: terminal,
-    content: "In this architectural role inside cross teams I was responsible for"
-  },
-  "designsystem": {
-    title: "Design Systems",
-    image:"",
-    content: ""
-  },
-  "surfe": {
-    title: "Surfe",
-    image:"",
-    content: ""
-  },
-  "consultar": {
-    title: "Consultar Processos",
-    image:"",
-    content: ""
-  },
-  "lesgow": {
-    title: "Lesgow",
-    image:"",
-    content: ""
-  },
-  "student": {
-    title: "Student Years",
-    image:"",
-    content: ""
-  },
-  "lawsuit": {
-    title: "Lawsuit",
-    image:"",
-    content: ""
-  },
-  "bilheteriapp": {
-    title: "Bilheteriapp",
-    image:"",
-    content: ""
-  },
-  "onlineoffice": {
-    title: "Online Office",
-    image:"",
-    content: ""
-  },
-  "ooapp": {
-    title: "Online Office Mobile App",
-    image:"",
-    content: ""
-  },
+  "architect": Architect,
+  "designsystem": DesignSystem,
+  "surfe":  Surfe,
+  "consultar":  Consulta,
+  "lesgow":  Lesgow,
+  "student": Student,
+  "lawsuit":  Lawsuit,
+  "bilheteriapp":  Bilheteriapp,
+  "onlineoffice":  OnlineOffice,
+  "ooapp":  OOApp,
+  "": null
 }

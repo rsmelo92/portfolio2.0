@@ -1,7 +1,7 @@
 import { useState } from "react"
 import clsx from "clsx"
 
-// import { Modal } from "./Modal"
+import { Modal } from "./Modal"
 
 import squares from "/works/squares.webp"
 import silhouette from "/works/silhouette.jpg"
@@ -28,7 +28,7 @@ type Props = {
 }
 
 export const Works = ({ title }: Props) => {
-  const [_, setCurrentData] = useState<Data>("")
+  const [currentData, setCurrentData] = useState<Data>("")
   const filter = "invert(100%) contrast(0.9) brightness(0.666)";
   return (
     <section className={classes.section}>
@@ -182,7 +182,7 @@ export const Works = ({ title }: Props) => {
           />
         </div>
         {/* TODO: Create pages for works */}
-        {/* <Modal data={currentData} onClose={() => setCurrentData("")} /> */}
+        <Modal data={currentData} onClose={() => setCurrentData("")} />
       </div>
     </section>
   )
