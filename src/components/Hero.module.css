@@ -13,11 +13,16 @@
   left: 0;
   cursor: default;
   user-select: none;
+  z-index: 1;
 }
 
 .title > span {
   background-color: color-mix(in srgb, var(--color-accent) 80%, var(--white));
   padding: 0 6px;
+}
+
+.image {
+  filter: grayscale(.95);
 }
 
 @media (max-width: 650px) {

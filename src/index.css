@@ -11,7 +11,7 @@
   --white: rgba(255, 255, 255, 0.87);
 
   /* main colors */
-  --color-primary: #05403A;
+  /* --color-primary: #05403A; */
   --color-accent: #F2490C;
 
   /* feedback */
@@ -29,7 +29,8 @@
   --color-blockquote-border: var(--gray-2);
 
   /* others */
-  --background-dark: #1a241e;
+  --background-dark: #121217;
+  /* --background-dark: #1a241e; */
   --shadow-1: rgba(0, 0, 0, 0.3);
 }
 
