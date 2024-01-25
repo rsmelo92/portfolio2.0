@@ -22,7 +22,20 @@
 .content {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
   width: 100%;
+}
+
+.content svg {
+  fill: var(--white);
+  width: 2rem;
+  cursor: pointer;
+  margin: 1rem .3rem;
+}
+
+.content svg:hover {
+  fill: var(--color-accent);
 }
 
 .article {
