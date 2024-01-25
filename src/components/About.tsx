@@ -12,9 +12,9 @@ export const About = () => {
         <h2 className={classes.title}>About</h2>
         <div className={classes.content}>
           <article className={classes.article}>
-            <p>I have {years} years working as a Senior Software Engineer.</p>
-            <p>With a consistent history of not only delivering fine-tuned features, but also giving mentorship and improve codebase/inner tools/devops.</p>
-            <p>My whole career I've been working remotely, with a consistent experience in highly collaborative and distributed environments.</p>
+            <p>With {years} years working as a <span className="highlight">Senior Software Engineer</span> I have a consistent history of not just delivering meticulously crafted features, but also offering mentorship and improving codebase, architecture, and DevOps practices.</p>
+            <br/>
+            <p>My whole career I've been working remotely in highly <span className="highlight">collaborative</span> and distributed environments.</p>
           </article>
         </div>
       </div>

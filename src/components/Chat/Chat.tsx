@@ -11,7 +11,6 @@ export const Chat = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const chat = useRef<webllm.ChatWorkerClient | null>(null)
 
-  const isChromiumBased = navigator.userAgent.includes("Chrome")
   let focusTimeout: NodeJS.Timeout | null = null;
 
   useEffect(() => {
@@ -20,6 +19,12 @@ export const Chat = () => {
     }
   }, [focusTimeout])
   
+  const isChromiumBased = navigator.userAgent.includes("Chrome")
+
+  // Webpgu only works in chromium based browsers
+  if(!isChromiumBased) {
+    return
+  }
 
   const instantiateChat = async () => {
     const newChat = new webllm.ChatWorkerClient(new Worker(
@@ -41,13 +46,6 @@ export const Chat = () => {
     e.preventDefault()
     const prompt = inputValue
     if(prompt === "") return
-
-    // Webpgu only works in chromium based browsers
-    if(!isChromiumBased) {
-      setText(["Please use a chromium based browser otherwise I can't load the LLM model. Chrome or Edge for example", prompt, ...text]);
-      setInputValue("")
-      return
-    }
 
     setText(["...", prompt, ...text])
     setInputValue("")

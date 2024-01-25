@@ -69,8 +69,14 @@ a:hover {
   overflow: hidden;
 }
 
+.highlight {
+  background-color: color-mix(in srgb, var(--color-accent) 80%, var(--white));
+  padding: 0 6px;
+}
+
 @media (max-width: 650px) {
   body {
     padding: 0 1rem;
+    padding-bottom: 8rem;
   }
 }
