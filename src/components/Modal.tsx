@@ -63,6 +63,7 @@ export const Modal = ({ data, onClose }: Props) => {
         className={classes.dragbarWrapper}
         onDrag={(e: React.DragEvent<HTMLDivElement>) => {
           e.preventDefault();
+          // TODO: Dont drag up
           if(modalRef.current === null) return
           if(currentData === "") return
 
