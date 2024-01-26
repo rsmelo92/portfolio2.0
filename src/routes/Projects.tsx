@@ -1,4 +1,4 @@
-import { Works } from "@/components/Works"
+import { Works } from "@/components/Works/Works"
 import { useEffect } from "react";
 
 export const Projects = () => {

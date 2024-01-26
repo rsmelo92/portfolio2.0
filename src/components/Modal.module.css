@@ -2,13 +2,39 @@
   position: fixed;
   left: 0;
   right: 0;
+  top: 0;
   bottom: -25px;
   background: var(--background-dark);
   transition: top .2s linear;
   z-index: 10;
   border-radius: 12px;
   overflow: scroll;
+  transform: translateY(100vh);
+  transition: transform 250ms linear;
 }
+
+.modal * {
+  user-select: none;
+}
+
+.dragbarWrapper {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.dragbar {
+  width: 100%;
+  height: 50px;
+  cursor: grab;
+}
+
 
 .header {
   display: flex;

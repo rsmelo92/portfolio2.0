@@ -1,0 +1,56 @@
+.wrapper {
+  padding: 2.5rem;
+}
+
+.cover {
+  width: 100%;
+  overflow: hidden;
+  height: 250px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.cover > div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+
+.image {
+  width: 90%;
+  max-height: 1000px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.article {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.animatedImage {
+  animation-name: scroll;
+  animation-duration: 70s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
