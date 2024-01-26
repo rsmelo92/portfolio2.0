@@ -1,5 +1,6 @@
 import * as webllm from "@mlc-ai/web-llm";
 import { useEffect, useRef, useState } from "react";
+import LLM from "/LLM.mp4"
 
 import classes from './Chat.module.css'
 
@@ -21,9 +22,17 @@ export const Chat = () => {
   
   const isChromiumBased = navigator.userAgent.includes("Chrome")
 
-  // Webpgu only works in chromium based browsers
+  // WebGPU only works in chromium based browsers
   if(!isChromiumBased) {
-    return
+    return (
+      <div className={classes.videoWrapper}>
+        <p className={classes.fallback}>Please use a chromium based browser to use the LLM model. Chrome or Edge for example</p>
+        <video width="100%" height="auto" autoPlay muted loop>
+          <source src={LLM} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    );
   }
 
   const instantiateChat = async () => {

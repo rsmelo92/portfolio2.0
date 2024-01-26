@@ -50,10 +50,10 @@
   padding-bottom: 3px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1024px) {
   .section {
     height: initial;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-bottom: 2rem;
   }
 

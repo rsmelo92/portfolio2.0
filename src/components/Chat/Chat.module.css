@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+.videoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .chatWrapper {
   height: 350px;
   display: flex;
@@ -102,6 +107,12 @@
   font-style: italic;
 }
 
+.fallback {
+  font-style: italic;
+  font-size: .85rem;
+  text-align: center;
+}
+
 @media (max-width: 650px) {
   .wrapper {
     width: 100%;
@@ -111,5 +122,11 @@
   .chatWrapper{
     height: 500px;
     margin-bottom: 40px;
+  }
+
+  .videoWrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 4rem;
   }
 }
