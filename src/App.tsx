@@ -22,7 +22,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-// ????
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
 }

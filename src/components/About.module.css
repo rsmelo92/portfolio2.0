@@ -22,7 +22,20 @@
 .content {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
   width: 100%;
+}
+
+.content svg {
+  fill: var(--white);
+  width: 2rem;
+  cursor: pointer;
+  margin: 1rem .3rem;
+}
+
+.content svg:hover {
+  fill: var(--color-accent);
 }
 
 .article {
@@ -33,10 +46,14 @@
   text-align: right;
 }
 
-@media (max-width: 650px) {
+.article span {
+  padding-bottom: 3px;
+}
+
+@media (max-width: 1024px) {
   .section {
     height: initial;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin-bottom: 2rem;
   }
 

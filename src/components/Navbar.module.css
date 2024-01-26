@@ -15,7 +15,18 @@
 }
 
 .list a {
+  opacity: .8;
+  font-weight: 600;
   font-size: 1.4rem;
+}
+
+.list a:hover {
+  opacity: 1;
+}
+
+.active {
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 @media (max-width: 650px) {

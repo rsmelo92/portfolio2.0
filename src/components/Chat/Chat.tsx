@@ -1,5 +1,6 @@
 import * as webllm from "@mlc-ai/web-llm";
 import { useEffect, useRef, useState } from "react";
+import LLM from "/LLM.mp4"
 
 import classes from './Chat.module.css'
 
@@ -11,7 +12,6 @@ export const Chat = () => {
   const inputRef = useRef<HTMLInputElement>(null)
   const chat = useRef<webllm.ChatWorkerClient | null>(null)
 
-  const isChromiumBased = navigator.userAgent.includes("Chrome")
   let focusTimeout: NodeJS.Timeout | null = null;
 
   useEffect(() => {
@@ -20,6 +20,20 @@ export const Chat = () => {
     }
   }, [focusTimeout])
   
+  const isChromiumBased = navigator.userAgent.includes("Chrome")
+
+  // WebGPU only works in chromium based browsers
+  if(!isChromiumBased) {
+    return (
+      <div className={classes.videoWrapper}>
+        <p className={classes.fallback}>Please use a chromium based browser to use the LLM model. Chrome or Edge for example</p>
+        <video width="100%" height="auto" autoPlay muted loop>
+          <source src={LLM} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    );
+  }
 
   const instantiateChat = async () => {
     const newChat = new webllm.ChatWorkerClient(new Worker(
@@ -41,13 +55,6 @@ export const Chat = () => {
     e.preventDefault()
     const prompt = inputValue
     if(prompt === "") return
-
-    // Webpgu only works in chromium based browsers
-    if(!isChromiumBased) {
-      setText(["Please use a chromium based browser otherwise I can't load the LLM model. Chrome or Edge for example", prompt, ...text]);
-      setInputValue("")
-      return
-    }
 
     setText(["...", prompt, ...text])
     setInputValue("")
