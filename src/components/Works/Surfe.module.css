@@ -7,20 +7,23 @@
   overflow: hidden;
   height: 250px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
 }
 
 .cover > div {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   flex: 1;
   overflow: hidden;
+  background-color: #fafafa;
 }
 
 
 .image {
-  width: 100%;
+  width: 90%;
+  max-height: 1000px;
 }
 
 .title {
