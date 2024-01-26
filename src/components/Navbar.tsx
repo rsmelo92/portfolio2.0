@@ -15,9 +15,10 @@ export const Navbar = () => {
         <li>
           <Link to={ROOT_PATH} className={clsx(location.pathname === ROOT_PATH && classes.active)}>Home</Link>
         </li>
-        <li>
+        {/* TODO: Uncomment when its done */}
+        {/* <li>
           <Link to={`${ROOT_PATH}projects`} className={clsx(location.pathname === `${ROOT_PATH}projects` && classes.active)}>Projects</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   )
