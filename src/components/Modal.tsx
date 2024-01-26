@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Student } from './Works/Student'
 
 import classes from './Modal.module.css'
@@ -20,17 +20,23 @@ type Props = {
 export type Data =  "" | "architect" | "designsystem" | "surfe" | "consultar" | "lesgow" | "student" | "lawsuit" | "bilheteriapp" | "onlineoffice" | "ooapp"
 
 export const Modal = ({ data, onClose }: Props) => {
-  const initialPosition = "100vh"
-  const [topPosition, setTopPosition] = useState(initialPosition);
+  const Component = data && WORKS[data]
+
+  const [currentData, setCurrentData] = useState(data)
+  const modalRef = useRef<HTMLDivElement>(null);
+  const initY = modalRef?.current?.getBoundingClientRect().y
 
   const closeModal = useCallback(() => {
-    setTopPosition(initialPosition)
+    if(modalRef.current === null) return
+    modalRef.current.style.transform = `translateY(100vh)`;
     onClose()
+    setCurrentData("")
   }, [onClose])
 
   useEffect(() => {
-    if(data === "") return
-    setTopPosition("20px")
+    if(data === "" || modalRef.current === null) return
+    modalRef.current.style.transform = `translateY(20px)`;
+    setCurrentData(data)
     document.querySelector("body")?.classList.add("body-freeze");
     return () => {
       document.querySelector("body")?.classList.remove("body-freeze");
@@ -48,13 +54,32 @@ export const Modal = ({ data, onClose }: Props) => {
     }
   }, [closeModal])
   
-  const Component = data && WORKS[data]
-
   return (
     <div
-      style={{ top: topPosition }}
-      className={classes.modal}
+        ref={modalRef}
+        className={classes.modal}
     >
+      <div 
+        className={classes.dragbarWrapper}
+        onDrag={(e: React.DragEvent<HTMLDivElement>) => {
+          e.preventDefault();
+          if(modalRef.current === null) return
+          if(currentData === "") return
+
+          const movement = e.clientY
+          if(movement > 200) return closeModal()
+          if(initY && (movement >= initY)) return
+
+          if(movement === 0) {
+            modalRef.current.style.transform = `translateY(20px)`;
+            return 
+          }
+          modalRef.current.style.transform = `translateY(${movement}px)`;
+        }}
+        draggable
+      >
+        <div className={classes.dragbar} />
+      </div>
       <div className={classes.header}>
         <button
           type='button'
