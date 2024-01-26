@@ -1,7 +1,7 @@
 import { useState } from "react"
 import clsx from "clsx"
 
-import { Modal } from "./Modal"
+import { Modal } from "../Modal"
 
 import squares from "/works/squares.webp"
 import silhouette from "/works/silhouette.jpg"
@@ -21,7 +21,7 @@ import placeholder from "/works/placeholder.jpg"
 
 import classes from './Works.module.css'
 
-import type { Data } from "./Modal"
+import type { Data } from "../Modal"
 
 type Props = { 
   title?: string
