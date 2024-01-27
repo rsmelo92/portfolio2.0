@@ -6,7 +6,6 @@ import { Main } from "@/routes/Main";
 import { Projects } from "@/routes/Projects";
 
 const { BASE_URL } = import.meta.env
-console.log(import.meta.env);
 
 const router = createBrowserRouter([
   {

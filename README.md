@@ -2,7 +2,7 @@
 
 Built with Vite and React
 
-To run the projects just run:
+To work on the project just run:
 
 ```
 yarn
