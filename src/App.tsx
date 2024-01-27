@@ -5,17 +5,20 @@ import Root from "@/routes/Root";
 import { Main } from "@/routes/Main";
 import { Projects } from "@/routes/Projects";
 
+const { BASE_URL } = import.meta.env
+console.log(import.meta.env);
+
 const router = createBrowserRouter([
   {
-    path: "/portfolio2.0/",
+    path: BASE_URL,
     element: <Root />,
     children: [
       {
-        path: "/portfolio2.0/",
+        path: BASE_URL,
         element: <Main />,
       },
       {
-        path: "/portfolio2.0/projects",
+        path: `${BASE_URL}/projects`,
         element: <Projects />,
       },
     ],
