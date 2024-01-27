@@ -7,7 +7,7 @@ export const Surfe = () => {
     <div>
       <div className={classes.cover}>
         <div>
-          <img className={classes.image} src={cover} />
+          <img alt="cover" className={classes.image} src={cover} />
         </div>
       </div>
       <div className={classes.wrapper}>

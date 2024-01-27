@@ -36,6 +36,9 @@ export const Works = ({ title }: Props) => {
       <div className={classes.grid}>
         <div
           className={classes.box}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("architect")}
           onClick={() => setCurrentData("architect")}
         >
           <div
@@ -48,6 +51,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={clsx(classes.forceDark, classes.box)}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("designsystem")}
             onClick={() => setCurrentData("designsystem")}
             className={classes.boxContent}
             style={{
@@ -65,6 +71,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={clsx(classes.forceDark, classes.box)}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("surfe")}
             onClick={() => setCurrentData("surfe")}
             className={classes.boxContent}
             style={{
@@ -75,6 +84,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={classes.box}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("consultar")}
             onClick={() => setCurrentData("consultar")}
             className={classes.boxContent}
             style={{
@@ -84,6 +96,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={classes.box}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("lesgow")}
             onClick={() => setCurrentData("lesgow")}
             className={classes.boxContent}
             style={{
@@ -113,6 +128,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={classes.box}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("student")}
             onClick={() => setCurrentData("student")}
             className={classes.boxContent}
             style={{
@@ -122,6 +140,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={clsx(classes.forceDark, classes.box)}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("lawsuit")}
             onClick={() => setCurrentData("lawsuit")}
             className={classes.boxContent}
             style={{
@@ -132,6 +153,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={classes.box}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("bilheteriapp")}
             onClick={() => setCurrentData("bilheteriapp")}
             className={classes.boxContent}
             style={{
@@ -141,6 +165,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={clsx(classes.forceDark, classes.box)}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("onlineoffice")}
             onClick={() => setCurrentData("onlineoffice")}
             className={classes.boxContent}
             style={{
@@ -161,6 +188,9 @@ export const Works = ({ title }: Props) => {
         </div>
         <div className={clsx(classes.forceDark, classes.box)}>
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event: React.KeyboardEvent) => event.key === 'Enter' && setCurrentData("ooapp")}
             onClick={() => setCurrentData("ooapp")}
             className={classes.boxContent}
             style={{

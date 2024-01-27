@@ -11,7 +11,7 @@ export const Hero = () => {
           </h1>
         </div>
         <div>
-          <img className={classes.image} src={profile} width={600} height={600} />
+          <img alt="Profile" className={classes.image} src={profile} width={600} height={600} />
         </div>
       </div>
     </section>

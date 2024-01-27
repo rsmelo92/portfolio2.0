@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <nav className={classes.nav}>
       <Link to={ROOT_PATH}>
-        <img src={Logo} width={45} height={45} />
+        <img alt="Logo" src={Logo} width={45} height={45} />
       </Link>
       <ul className={classes.list}>
         <li>

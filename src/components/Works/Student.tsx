@@ -20,7 +20,7 @@ export const Student = () => {
     <div>
       <div className={classes.cover}>
         <div>
-          {showCover ? <img className={classes.animatedImage} src={cover} /> : <img src={cover} />}
+          {showCover ? <img alt="cover" className={classes.animatedImage} src={cover} /> : <img alt="cover" src={cover} />}
         </div>
       </div>
       <div className={classes.wrapper}>
