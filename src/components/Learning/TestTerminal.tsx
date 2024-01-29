@@ -10,21 +10,18 @@ type Props = {
 
 export const TestTerminal = (props: Props) => {
   const testsAmount = useRef<number | null>(null)
-  const [results, setResults] = useState(props.results.reverse());
+  const [results, setResults] = useState(props.results);
   const [testStatus, setTestStatus] = useState({ pass:0, fail: 0 })
+
   useEffect(() => {
-    const newResults = props.results.reverse()
-    if(!testsAmount.current) testsAmount.current = props.results.length
-    const trueResults = newResults.slice(0, testsAmount.current);
-      
-    const totalTests = trueResults.reduce((acc, cur) => {
+    const totalTests = props.results.reduce((acc, cur) => {
       if(cur.status === "pass") return { ...acc, pass: acc.pass + 1}
       if(cur.status === "fail") return { ...acc, fail: acc.fail + 1}
       return acc
     }, { pass: 0, fail: 0 })
     
     setTestStatus(totalTests);
-    setResults(trueResults)
+    setResults(props.results)
   }, [props.results])
   
   return (

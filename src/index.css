@@ -61,6 +61,10 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Neue Haas Grotesk Display Pro', system-ui, sans-serif;
 }
 
+a {
+  line-height: 1.2rem;
+}
+
 a:hover {
   color: var(--color-accent)
 }

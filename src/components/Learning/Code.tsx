@@ -1,7 +1,7 @@
 // https://www.npmjs.com/package/@uiw/react-codemirror
 
 import CodeMirror from '@uiw/react-codemirror';
-import { SetStateAction, useCallback, useState } from 'react';
+import { SetStateAction, useCallback, useRef, useState } from 'react';
 import { materialDark } from "@uiw/codemirror-theme-material";
 
 import { TestTerminal } from "./TestTerminal"
@@ -18,6 +18,7 @@ type Props = {
 }
 
 export function Code({ initialValue, extensions, tests }: Props) {
+  const testsAmount = useRef<number | null>(null)
   const [value, setValue] = useState<string>("");
   const [testResults, setTestResults] = useState<TestResults[]>([]);
 
@@ -25,6 +26,14 @@ export function Code({ initialValue, extensions, tests }: Props) {
     console.log('val:', val);
     setValue(val);
   }, []);
+
+  const formatResult = async () => {
+    const results = await tests(value)
+    const newResults = results.reverse()
+    if(!testsAmount.current) testsAmount.current = results.length
+    const trueResults = newResults.slice(0, testsAmount.current);
+    setTestResults(trueResults);
+  }
 
   return (
     <div>
@@ -35,12 +44,13 @@ export function Code({ initialValue, extensions, tests }: Props) {
         width='840px'
         extensions={extensions}
         onChange={onChange}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
+        autoFocus
       />
       <button
         className={classes.button}
         onClick={async () => {
-          const res = await tests(value)
-          setTestResults(res);
+          await formatResult()
         }}
         disabled={value === ""}
       >

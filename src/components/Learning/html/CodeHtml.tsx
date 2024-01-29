@@ -2,11 +2,7 @@ import * as jest from 'jest-lite';
 
 import { html } from "@codemirror/lang-html";
 import { Code } from "../Code"
-
-type JestLite = {
-  it: (declaration: string, cb: () => void) => void
-  describe: (declaration: string, cb: () => void) => void
-} & typeof jest
+import { JestLite } from '@/types';
 
 const { it, describe, expect, run } = jest as JestLite
 
@@ -35,7 +31,6 @@ export const CodeHtml = () => {
   )
 }
 
-
 const testCode = async (code: string) => {
   describe('renders properly', () => {
     it('is wrapped in correct semantic tag article', () => {
@@ -50,7 +45,5 @@ const testCode = async (code: string) => {
       expect(code).toMatch("<h2>");
     });
   });
-
-  const results = await run();
-  return results
+  return await run();
 }

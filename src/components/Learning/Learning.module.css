@@ -2,3 +2,24 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
+
+.section a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  line-height: 1.5rem;
+}
+
+.lesson {
+  padding: 2rem 1rem;
+  border-left: 6px solid var(--color-accent);
+  background-color: var(--black);
+  margin-right: 2rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.4rem;
+}
