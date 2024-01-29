@@ -1,24 +1,25 @@
 // https://www.npmjs.com/package/@uiw/react-codemirror
+
 import CodeMirror from '@uiw/react-codemirror';
-import { html } from '@codemirror/lang-html';
 import { SetStateAction, useCallback, useState } from 'react';
 import { materialDark } from "@uiw/codemirror-theme-material";
 
-export function Code() {
-  const [value, setValue] = useState<string>("");
+import { TestTerminal } from "./TestTerminal"
 
-  const initialValue = `
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
-      <body>
-        
-      </body>
-    </html>
-  `;
+import type { Extension } from '@uiw/react-codemirror';
+import type { TestResults } from "@/types"
+
+import classes from "./Code.module.css";
+
+type Props = {
+  initialValue: string
+  extensions: Extension[]
+  tests: (value: string) => Promise<TestResults[]>
+}
+
+export function Code({ initialValue, extensions, tests }: Props) {
+  const [value, setValue] = useState<string>("");
+  const [testResults, setTestResults] = useState<TestResults[]>([]);
 
   const onChange = useCallback((val: SetStateAction<string>) => {
     console.log('val:', val);
@@ -26,16 +27,44 @@ export function Code() {
   }, []);
 
   return (
-    <>
+    <div>
       <CodeMirror
         theme={materialDark}
         value={initialValue}
-        height="50vh"
-        width='100%'
-        extensions={[html()]}
+        height="40vh"
+        width='840px'
+        extensions={extensions}
         onChange={onChange}
       />
-      <div dangerouslySetInnerHTML={{__html:value}} />
-    </>
+      <button
+        className={classes.button}
+        onClick={async () => {
+          const res = await tests(value)
+          setTestResults(res);
+        }}
+        disabled={value === ""}
+      >
+        <PlayIcon /> 
+        Run tests
+      </button>
+      <TestTerminal results={testResults} />
+    </div>
   )
+}
+
+function PlayIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      fill="#185922"
+      version="1.1"
+      viewBox="0 0 17.804 17.804"
+      xmlSpace="preserve"
+    >
+      <g>
+        <path d="M2.067.043a.4.4 0 01.426.042l13.312 8.503a.41.41 0 01.154.313c0 .12-.061.237-.154.314L2.492 17.717a.402.402 0 01-.25.087l-.176-.04a.399.399 0 01-.222-.361V.402c0-.152.086-.295.223-.359z"></path>
+      </g>
+    </svg>
+  );
 }

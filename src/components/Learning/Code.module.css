@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  height: 42px;
+  font-size: 1rem;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 118px;
+  margin: .5rem 0;
+}
+
+.button:hover {
+  opacity: .8;
+}
+
+.button:disabled {
+  opacity: .2;
+}
