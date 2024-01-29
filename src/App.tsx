@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "@/routes/Root";
 import { Main } from "@/routes/Main";
 import { Projects } from "@/routes/Projects";
+import { Learning } from "./routes/Learning";
 
 const { BASE_URL } = import.meta.env
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: `${BASE_URL}/projects`,
         element: <Projects />,
+      },
+      {
+        path: `${BASE_URL}/learning`,
+        element: <Learning />,
       },
     ],
   },
