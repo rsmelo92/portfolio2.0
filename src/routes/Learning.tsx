@@ -1,5 +1,9 @@
-import { Learning as LearningComponent } from "@/components/Learning/Learning"
+import { SemanticHtml } from "@/components/Learning/html/SemanticHtml"
+import { useParams } from "react-router-dom";
 
 export const Learning = () => {
-  return <LearningComponent />
+  const { id } = useParams();
+  console.log({ id });
+  
+  return <SemanticHtml />
 }

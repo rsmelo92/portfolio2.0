@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         element: <Projects />,
       },
       {
-        path: `${BASE_URL}/learning`,
+        path: `${BASE_URL}/learning/:id`,
         element: <Learning />,
       },
     ],
